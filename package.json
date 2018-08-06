@@ -1,0 +1,20 @@
+{
+  "name": "isomorphic-fetch-vs-axios",
+  "version": "1.0.0",
+  "description": "Comparing isomorphic-fetch vs axios",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trivikr/isomorphic-fetch-vs-axios.git"
+  },
+  "author": "Kamat, Trivikram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trivikr/isomorphic-fetch-vs-axios/issues"
+  },
+  "homepage": "https://github.com/trivikr/isomorphic-fetch-vs-axios#readme"
+}
