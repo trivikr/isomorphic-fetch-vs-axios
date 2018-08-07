@@ -1,7 +1,8 @@
-const http = require("http");
+const express = require("express");
+const app = express();
 
-http
-  .createServer((request, response) => {
+app
+  .get("/", (request, response) => {
     //setTimeout(function() {
     response.end("Hello");
     //}, 2000);
