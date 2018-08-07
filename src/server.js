@@ -12,7 +12,7 @@ app.get("/main.js", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  setTimeout(() => res.end("Hello"), 2000);
+  setTimeout(() => res.end("Hello"), 100);
 });
 
 app.listen(3000);

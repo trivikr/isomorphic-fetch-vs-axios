@@ -1,4 +1,5 @@
 import axios from "axios";
+import fetch from "isomorphic-fetch";
 
 function button(text, onClick) {
   let element = document.createElement("button");
@@ -25,15 +26,28 @@ function createDiv(text) {
 }
 
 function callAxios() {
-  const pollingFunction = () =>
-    axios("http://localhost:3000/hello").then(response => {
+  const axiosPollingFn = () =>
+    axios("/hello").then(response => {
       document.body.appendChild(createDiv(response.data));
-      pollingFunction();
+      axiosPollingFn();
     });
-  pollingFunction();
+  axiosPollingFn();
 }
 
-document.body.appendChild(button("Start server calls with isomorphic-fetch"));
+function callIsomorphicFetch() {
+  const fetchPollingFn = () =>
+    fetch("/hello")
+      .then(response => response.json())
+      .then(data => {
+        document.body.appendChild(createDiv(data));
+        fetchPollingFn();
+      });
+  fetchPollingFn();
+}
+
+document.body.appendChild(
+  button("Start server calls with isomorphic-fetch", callIsomorphicFetch)
+);
 document.body.appendChild(button("Start server calls with axios", callAxios));
 
 document.body.appendChild(lineBreak());
