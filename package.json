@@ -4,7 +4,8 @@
   "description": "Comparing isomorphic-fetch vs axios",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --mode=development --watch"
   },
   "repository": {
     "type": "git",
