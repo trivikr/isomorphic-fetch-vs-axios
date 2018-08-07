@@ -25,9 +25,12 @@ function createDiv(text) {
 }
 
 function callAxios() {
-  axios("http://localhost:3000/hello").then(response => {
-    document.body.appendChild(createDiv(response.data));
-  });
+  const pollingFunction = () =>
+    axios("http://localhost:3000/hello").then(response => {
+      document.body.appendChild(createDiv(response.data));
+      pollingFunction();
+    });
+  pollingFunction();
 }
 
 document.body.appendChild(button("Start server calls with isomorphic-fetch"));
