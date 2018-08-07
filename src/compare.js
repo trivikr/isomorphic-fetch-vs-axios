@@ -25,12 +25,7 @@ function createDiv(text) {
 }
 
 function callAxios() {
-  axios("http://localhost:3000", {
-    withCredentials: true,
-    headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
-  }).then(response => {
+  axios("http://localhost:3000/hello").then(response => {
     document.body.appendChild(createDiv(response.data));
   });
 }
