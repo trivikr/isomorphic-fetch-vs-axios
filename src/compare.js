@@ -37,10 +37,15 @@ function callAxios() {
 function callIsomorphicFetch() {
   const fetchPollingFn = () =>
     fetch("/hello")
-      .then(response => response.json())
+      .then(response => {
+        return response.json();
+      })
       .then(data => {
         document.body.appendChild(createDiv(data));
         fetchPollingFn();
+      })
+      .catch(e => {
+        console.log(e);
       });
   fetchPollingFn();
 }

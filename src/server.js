@@ -12,7 +12,10 @@ app.get("/main.js", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  setTimeout(() => res.end("Hello"), 100);
+  setTimeout(() => {
+    res.set("Content-Type", "application/json");
+    res.end(JSON.stringify("Hello"));
+  }, 1000);
 });
 
 app.listen(3000);
