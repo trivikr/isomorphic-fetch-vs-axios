@@ -1,7 +1,9 @@
-const http = require("http");
+function component() {
+  let element = document.createElement("div");
 
-http
-  .createServer((request, response) => {
-    response.end("Hello");
-  })
-  .listen(2000);
+  element.innerHTML = "Hello";
+
+  return element;
+}
+
+document.body.appendChild(component());

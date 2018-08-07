@@ -2,10 +2,9 @@
   "name": "isomorphic-fetch-vs-axios",
   "version": "1.0.0",
   "description": "Comparing isomorphic-fetch vs axios",
-  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
