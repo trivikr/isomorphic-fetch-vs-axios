@@ -1,9 +1,9 @@
-function component() {
-  let element = document.createElement("div");
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
 
-  element.innerHTML = "Hello";
-
-  return element;
-}
-
-document.body.appendChild(component());
+http
+  .createServer((req, res) => {
+    fs.createReadStream(path.join(__dirname + "/index.html")).pipe(res);
+  })
+  .listen(2000);

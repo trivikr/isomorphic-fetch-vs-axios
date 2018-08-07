@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/client.js",
+  entry: "./src/compare.js",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
